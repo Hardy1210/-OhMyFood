@@ -1,0 +1,136 @@
+@use '../base/variables';
+@use '../base/typography';
+
+/*-------Nav-------*/
+.nav {
+    .nav__logo {
+        /*necessaire de convretir ma balise <a> en bloc
+        pour lui posicionner avec l'ombre box shadow */
+        //display: block;
+        box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.20);
+        position: relative;
+        z-index: 2;
+    }
+    img {
+        
+        width: 200px;
+        height: auto;
+        display: block;
+        margin: auto;
+        padding: 30px 0 20px 0;
+    }
+}
+/*------Nav address------*/
+.nav__address {
+    background-color: variables.$background-color-variant;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    color: variables.$typography-secondary-color;
+    /*por le box shadow besoin de metre un position relative 
+    et un z-index pour bien plase le blos et que l'onbre puise aparetre*/
+    box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.30);
+    position: relative;
+    z-index: 1;
+    /*&*/.nav__icon {
+        font-size: 1.2em;
+    }
+    address {
+        all: initial;
+        font-family: typography.$font-project;
+        font-weight: 500;
+        font-size: 1.11em;
+    }
+}
+
+/*-------Button reservez-------*/
+.nav__reservez {
+    background-color: variables.$background-color;
+    text-align: center;
+    padding: 35px 20px 40px 20px;
+}
+
+/*-------section fonctionnement--------*/
+//si c'ets necessaire
+/*.fonctionnement__background {
+}*/
+.fonctionnement {
+    padding: 40px 25px 60px 25px;
+    display: flex;
+    flex-direction: column;
+    //border-radius: 30px;
+    box-sizing: border-box;
+    .fonctionnement__tittle {
+        //text-align: center;
+        padding-right: 100px;
+        
+    }
+    .fonctionnement__list {
+        //on va definir une nouvelle liste numerote
+        list-style: none;
+        counter-reset: custom-counter;
+        display: grid;
+        flex-direction: column;
+        gap: 25px;
+        
+        padding: 25px 0 0 0;
+        .fonctionnement__choice {
+            text-decoration: none;
+            display: block;
+            margin: 0 auto;
+            max-width: 380px;
+            //min-width: 210px;
+        }
+        .fonctionnement__choice--cont {  
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: variables.$background-color;
+            padding: 27px 30px;
+            border-radius: 25px 25px;
+            margin-left: 15px;
+            //attention 
+            //width: 100%;
+            height: auto;
+            font-weight: 500;
+            color: black;
+            box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.18);
+        }
+        .fonctionnement__choice--cont p {
+            font-weight: 500;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        .fonctionnement__choice i {
+            color: variables.$icon-color;
+            margin-right: 25px;
+            margin-left: 9px;
+            font-size: 1.3em;
+        }
+        //on met dans son conteneur leffet hover et on especifie l'icone
+        .fonctionnement__choice:hover i {
+            color: variables.$purple;
+        }
+        
+        .fonctionnement__choice--cont::before {
+            /*on appelle notre custom-counter
+            et on lui atribu lordre de notre liste numerote*/
+            content: counter(custom-counter);
+            counter-increment: custom-counter;
+            position: absolute;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: variables.$purple;
+            text-align: center;
+            //centre le numero verticalement
+            line-height: 30px;
+            color: white;
+            top: 23px;
+            left: -17px;
+        }
+    }
+}

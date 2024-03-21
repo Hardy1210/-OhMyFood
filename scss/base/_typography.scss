@@ -1,0 +1,28 @@
+$font-project: "Roboto", sans-serif;
+
+//general
+body {
+    font-family: $font-project;
+}
+
+//margin de h1 h2
+.nav__tittle {
+    padding: 10px 60px;
+    font-size: 1.67em;
+
+}
+
+h2 {
+    font-size: 1.73em;
+    padding: 10px 0;
+}
+
+h3{
+    font-size: 1.3em;
+}
+
+p {
+    font-size: 1.25em;
+    font-weight: 390;
+    padding: 5px 0;
+}

@@ -1,0 +1,12 @@
+//styles
+@use './base/reset';
+@use './base/typography';
+@use './components/icons';
+@use './components/buttons';
+@use './layout/header';
+@use "./layout/main-content";
+
+@use './layout/footer';
+//media querie
+@use './media_queries/tablette';
+@use './media_queries/desktop';

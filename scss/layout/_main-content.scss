@@ -1,0 +1,82 @@
+@use '../base/variables';
+@use '../base/typography';
+
+/*pour utilizer les couleurs d'une variable
+dans aun autre variable il faut lappeler avec
+son nom de de fichier suivi d'un point et en 
+suite le nome de la propiete de la variable*/
+
+/*body {
+    background-color: variables.$color-body;
+}*/
+.restaurant__background {
+    background-color: variables.$background-color;
+}
+.restaurants {
+    
+    padding: 45px 20px;
+
+    .restaurants__title {
+        margin-bottom: 15px;
+    }
+    
+    .restaurants__cards {
+        display: grid;
+        //grid direction colum en desktop
+        row-gap: 40px;
+    }
+    
+    .restaurants__cards--link {
+        display: block;
+        //code a verifier
+        //max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+        //toujour metre dans la balise d'origin
+        text-decoration: none;
+        color: inherit;
+        .card {
+            background-color: variables.$background-basic;
+            border-radius: 20px;
+            //pour letiquete .nouveau
+            position: relative;
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height: 190px;
+        }
+        .card__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 15px;
+            text-decoration: none;
+        }
+
+
+        .like {
+            
+            font-size: 1.8em;
+            padding: 0 15px 15px 0;
+            
+        }
+
+
+        //etiquette d'un nouveau restaurant
+        .nouveau {
+            background-color: variables.$vert-claire;
+            color: variables.$vert-fonce;
+            position: absolute;
+            padding: 7px 15px;
+            font-weight: 500;
+            right: 15px;
+            top: 15px;
+            border-radius: 3px;
+        }
+    }
+}
+
+

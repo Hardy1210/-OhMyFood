@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.nav__tittle {
+  padding: 10px 60px;
+  font-size: 1.67em;
+}
+
+h2 {
+  font-size: 1.73em;
+  padding: 10px 0;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+p {
+  font-size: 1.25em;
+  font-weight: 390;
+  padding: 5px 0;
+}
+
+.button {
+  display: inline-block;
+  margin: 27px auto;
+  padding: 18px 25px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  font-size: 1.12em;
+  background: linear-gradient(rgb(220, 109, 218), rgb(167, 92, 217));
+  box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.3);
+  background-color: rgb(206, 52, 240);
+  background-image: linear-gradient(rgb(182, 111, 196), rgba(205, 205, 205, 0));
+  transition: background-color 0.4s;
+}
+
+.button:hover {
+  background-color: rgba(235, 91, 251, 0.769);
+}
+
+/*
+.button:hover {
+    background: variables.$button-color-hover;
+    //box-shadow: 0px 6px 15px -1px rgba(0,0,0,0.45);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.025);
+    transition: opacity 0.3s;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.button:hover::before {
+    opacity: 1;
+
+}*/
+/*-------Nav-------*/
+.nav .nav__logo {
+  /*necessaire de convretir ma balise <a> en bloc
+  pour lui posicionner avec l'ombre box shadow */
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+.nav img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: auto;
+  padding: 30px 0 20px 0;
+}
+
+/*------Nav address------*/
+.nav__address {
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+  color: #353535;
+  /*por le box shadow besoin de metre un position relative 
+  et un z-index pour bien plase le blos et que l'onbre puise aparetre*/
+  box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+  /*&*/
+}
+.nav__address .nav__icon {
+  font-size: 1.2em;
+}
+.nav__address address {
+  all: initial;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.11em;
+}
+
+/*-------Button reservez-------*/
+.nav__reservez {
+  background-color: #F3F3F3;
+  text-align: center;
+  padding: 35px 20px 40px 20px;
+}
+
+/*-------section fonctionnement--------*/
+/*.fonctionnement__background {
+}*/
+.fonctionnement {
+  padding: 40px 25px 60px 25px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.fonctionnement .fonctionnement__tittle {
+  padding-right: 100px;
+}
+.fonctionnement .fonctionnement__list {
+  list-style: none;
+  counter-reset: custom-counter;
+  display: grid;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px 0 0 0;
+}
+.fonctionnement .fonctionnement__list .fonctionnement__choice {
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  max-width: 380px;
+}
+.fonctionnement .fonctionnement__list .fonctionnement__choice--cont {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #F3F3F3;
+  padding: 27px 30px;
+  border-radius: 25px 25px;
+  margin-left: 15px;
+  height: auto;
+  font-weight: 500;
+  color: black;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.18);
+}
+.fonctionnement .fonctionnement__list .fonctionnement__choice--cont p {
+  font-weight: 500;
+  padding: 0;
+  font-size: 1.2em;
+}
+.fonctionnement .fonctionnement__list .fonctionnement__choice i {
+  color: #7E7E7E;
+  margin-right: 25px;
+  margin-left: 9px;
+  font-size: 1.3em;
+}
+.fonctionnement .fonctionnement__list .fonctionnement__choice:hover i {
+  color: #9356DC;
+}
+.fonctionnement .fonctionnement__list .fonctionnement__choice--cont::before {
+  /*on appelle notre custom-counter
+  et on lui atribu lordre de notre liste numerote*/
+  content: counter(custom-counter);
+  counter-increment: custom-counter;
+  position: absolute;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #9356DC;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  top: 23px;
+  left: -17px;
+}
+
+/*pour utilizer les couleurs d'une variable
+dans aun autre variable il faut lappeler avec
+son nom de de fichier suivi d'un point et en 
+suite le nome de la propiete de la variable*/
+/*body {
+    background-color: variables.$color-body;
+}*/
+.restaurant__background {
+  background-color: #F3F3F3;
+}
+
+.restaurants {
+  padding: 45px 20px;
+}
+.restaurants .restaurants__title {
+  margin-bottom: 15px;
+}
+.restaurants .restaurants__cards {
+  display: grid;
+  row-gap: 40px;
+}
+.restaurants .restaurants__cards--link {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+.restaurants .restaurants__cards--link .card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  position: relative;
+}
+.restaurants .restaurants__cards--link img {
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 190px;
+}
+.restaurants .restaurants__cards--link .card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 15px;
+  text-decoration: none;
+}
+.restaurants .restaurants__cards--link .like {
+  font-size: 1.8em;
+  padding: 0 15px 15px 0;
+}
+.restaurants .restaurants__cards--link .nouveau {
+  background-color: #99E2D0;
+  color: #008766;
+  position: absolute;
+  padding: 7px 15px;
+  font-weight: 500;
+  right: 15px;
+  top: 15px;
+  border-radius: 3px;
+}
+
+.footer {
+  background-color: #353535;
+  padding: 40px 30px;
+}
+.footer .footer__nav {
+  display: flex;
+  flex-direction: column;
+}
+.footer .footer__nav .footer__nav--svg {
+  width: 120px;
+  height: auto;
+  margin-bottom: 17px;
+}
+.footer .footer__nav .footer__nav--list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  gap: 6px;
+  color: #FFFFFF;
+}
+.footer .footer__nav .footer__nav--list i {
+  margin-right: 12px;
+}
+.footer .footer__nav .footer__nav--list a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1.1em;
+}
+.footer .footer__nav .footer__nav--list .fa-handshake-angle {
+  font-size: 0.7em;
+}
+
+@media (min-width: 767.98px) {
+  /*-------- Nav Header---------*/
+  .nav .nav__logo {
+    box-shadow: none;
+  }
+  .nav .nav__logo img {
+    width: 230px;
+    padding: 40px 0;
+  }
+  .nav .nav__address {
+    box-shadow: none;
+  }
+  .nav .nav__reservez {
+    padding-bottom: 10px;
+  }
+  .nav .nav__reservez h1 {
+    font-size: 2.8em;
+    margin: 0px 0 15px 0;
+  }
+  /*--------Section Fonctionnement---------*/
+  .fonctionnement {
+    padding: 50px 100px;
+  }
+  .fonctionnement .fonctionnement__tittle {
+    text-align: center;
+  }
+  .fonctionnement .fonctionnement__list {
+    justify-content: space-between;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    padding-right: 15px;
+  }
+  .fonctionnement .fonctionnement__list .fonctionnement__choice--cont {
+    width: 100%;
+  }
+  /*--------Main Restaurants---------*/
+  .restaurants {
+    padding: 20px 100px 30px 100px;
+  }
+  .restaurants__cards {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5vw;
+  }
+  .restaurants__cards .restaurants__cards--link img {
+    width: 100%;
+    height: 150px;
+  }
+  /*--------Footer---------*/
+  .footer {
+    padding: 50px 70px 30px 30px;
+  }
+  .footer .footer__nav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
+  }
+  .footer .footer__nav .footer__nav--svg {
+    margin: 15px 0 0 100px;
+    width: 100px;
+  }
+  .footer .footer__nav .footer__nav--list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement__background {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .fonctionnement {
+    padding: 50px 160px;
+  }
+  .fonctionnement .fonctionnement__tittle {
+    text-align: inherit;
+  }
+  .fonctionnement .fonctionnement__list {
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .restaurants {
+    padding: 20px 160px 30px 160px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
