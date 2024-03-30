@@ -1,0 +1,402 @@
+@use '../base/variables';
+@use '../base/typography';
+@use '../base/mixins';
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+/*------Nav-------*/
+.nav {
+    padding: 20px;
+    .nav__logo {
+        display: flex;
+        align-items: center;
+        &--arrow {
+            font-size: 1.8em;
+            color: variables.$typography-secondary-color;
+        }
+        &--link {
+            margin: auto;
+        }
+        img {
+            width: 190px;
+        }
+    }
+}
+
+
+/*------Menu-------*/
+
+.menu__container {
+    
+    .menu__image-1 {
+        background-image: url(/assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: -57px;
+    }
+    .menu__image-2 {
+        background-image: url(/assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: -57px;
+    }
+    .menu__image-3 {
+        background-image: url(/assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: -57px;
+    }
+    .menu__image-4 {
+        background-image: url(/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: -57px;
+    }
+    .menu {
+        box-sizing: border-box;
+        padding:  25px 18px;
+        background-color: variables.$background-color;
+        @include mixins.border-radius-top-menu(48px);
+        width: 100%;
+        //centrer le element menu
+        margin: 0 auto;
+        //attention version desktop
+        max-width: 1200px;
+        /*--------Reactions--------*/
+        &__title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 45px;
+            
+            .section__title {
+                font-family: "Shrikhand", serif;
+                font-weight: 400;
+                font-size: 1.9em;
+            }
+            
+            .menu__like {
+                font-size: 1.8em;
+                margin-right: 23px;
+                @include mixins.liked-color;
+                @include mixins.reaction-liked;
+                
+                input {
+                display: none;
+                }
+                //je change a la couleur de base
+                .fa-regular {
+                    color: black;
+                    
+                }
+            }
+
+        }
+
+        /*-------Entrées------*/
+        /*-------Appeteizers------*/
+    
+        section {
+            //centrer les elements cards
+            //pour version desktop fonctione aussi
+            max-width: 700px;
+            margin: 15px auto  38px auto;
+
+            .subtitle__card {
+                font-size: 1.1em;
+                font-weight: 400;
+                margin-bottom: 5px;
+            }
+            img {
+                width: 45px;
+            }
+
+            //Code demandé
+            article {
+                @include mixins.border-radius-cards;
+                @include mixins.box-shadow-card(0px, 5px, 15px, 0px, rgba(0,0,0,0.10));
+                margin-top: 15px;
+
+                .card {
+                    @include mixins.border-radius-cards;
+                    background: variables.$background-basic;
+                    display: flex;
+                    flex-direction: row;
+                    cursor: pointer;
+                    overflow: hidden;
+
+                    .card__text {
+                        margin: 13px 0 13px 15px;
+                        display: flex;
+                        flex-direction: column;
+                        /*cache la .card__text-2*/
+                        overflow: hidden;   
+                        /*important pour le fonctionemen du deplacement*/
+                        width: calc(100% - 54px);
+                        h4 {
+                            font-size: 1.26em;
+                        }
+                        p {
+                            font-size: 1.1em;
+                        }
+                        
+                        .dish, .dish--description {
+                            padding: 0;
+                            margin: 3px;
+                            //indspensable pour ellipsis
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        } 
+                    
+                    }
+                    .prix {
+                        display: flex;
+                        //attention
+                        width: 75px;
+                        
+                        align-items: flex-end;
+                        .prix--euro {
+                            padding: 0;
+                            font-size: 1.02em;
+                            font-weight: 600;
+                            //attention affichage
+                            padding: 0 15px 15px 20px;
+                        }
+                    }
+                    .icon--box {
+                        background: variables.$check-box;
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        width: 85px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: -5.2rem;
+                        transition: all 250ms ease-in-out;
+                        .fa-check {
+                            border-radius: 100%;
+                            background-color: variables.$background-basic;
+                            color: variables.$check-box;
+                            padding: 4px;
+                            
+                        }
+                    }
+                }
+                .card:hover .icon--box {
+                    margin: 0;
+                    /*transform: translate(-10px);*/
+                    transition: all 250ms ease-in-out;
+                    cursor: pointer;
+                }
+            }
+            //---------------------------------------------
+            /*
+                //code d'eseye checkbox
+            article  {
+                //border radius a trois conteneur car si no 
+                //pas tres accepte par les animation enfants
+                
+                @include mixins.border-radius-cards;
+                @include mixins.box-shadow-card(0px, 5px, 15px, 0px, rgba(0,0,0,0.10));
+                margin-top: 15px;
+                .card {
+                    @include mixins.border-radius-cards;
+                    background: variables.$background-basic;
+
+                    span {
+                        display: block;
+                        font-family: typography.$font-project;
+                    }
+                //label
+                    label {
+                        
+                        @include mixins.border-radius-cards;
+                        position: relative;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                        //overflow
+                        overflow: hidden;
+                        display: flex;
+                        justify-content: space-between;
+                        .card__text {
+                            margin: 10px 0 10px 12px;
+                            .dish, .dish--description {
+                                margin: 5px;
+                            }
+                            .dish {
+                                font-size: 1.27em;
+                                font-weight: 500;
+                            }
+                            .dish--description {
+                                font-size: 1.1em;
+                            }
+                        }
+                //inptut
+                        input {
+                            display: none;
+                        }
+                        .prix {
+                            //box-shadow: -10px 0 15px rgb(255, 255, 255);
+                            //box-shadow: 0px 10px 15px -10px rgb(255, 255, 255);
+                            background-color: variables.$background-basic;
+                            display: flex;
+                            justify-content: center;
+                            align-items: end;
+                            width: 70px;
+                            //transtion
+                            transition: transform 300ms ease-in-out;
+                            .prix--euro {
+                                font-weight: 600;
+                                margin: 0 0 18px 5px;
+                            }
+                        }
+                        //attention au changemen en
+                        //des wids en pixels des boxs
+                        //.prix et .icon--box
+                        //si non conflit des animations 
+                        .icon--box {
+                            position: absolute;
+                            background: variables.$check-box;
+                            width: 70px;
+                            height: 100%;
+                            right: -70px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            //transition
+                            transition: transform 300ms ease-in-out;
+                            .fa-check {
+                                border-radius: 100%;
+                                background-color: variables.$background-basic;
+                                color: variables.$check-box;
+                                padding: 4px;
+                                
+                            }
+                        }
+                    //declencher les animations
+                    }
+                    input:checked ~ .prix {
+                        transform: translateX(-70px);
+                    }
+                    input:checked ~.icon--box {
+                        transform: translateX(-70px);
+                    }
+                }
+            }
+
+            //---------------------------------*/
+        }
+        .nav__button {
+            //pour centrer l'element
+            display: flex;
+            .button__pages  {
+                //le style vien du compenents variables
+            }
+        }
+    }
+
+}
+
+//Footer
+.footer {
+    //margin-bottom: 0;
+    background-color: variables.$footer-color;
+    padding: 40px 30px;
+    .footer__nav {
+        display: flex;
+        flex-direction: column;
+        .footer__nav--svg {
+            width: 120px;
+            height: auto;
+            margin-bottom: 17px;
+            //la couleur on le change directemen ou se trouve le fichier
+        }
+        .footer__nav--list {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding-left: 0;
+            gap: 6px;
+            //font-size: 0.5em;
+            color: variables.$background-basic;
+        }
+        .footer__nav--list i {
+            margin-right: 12px;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer__nav--list a {
+            text-decoration: none;
+            color: variables.$background-basic;
+            font-size: 1.1em;
+            transition: color 0.3s ease-in-out;
+        }
+        .footer__nav--list .fa-handshake-angle {
+            font-size: 0.7em;
+        }
+        .footer__nav--list a:hover, .footer__nav--list i:hover  {
+            color: variables.$purple;
+        }        
+    }
+}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------*/
+/*-------------*/

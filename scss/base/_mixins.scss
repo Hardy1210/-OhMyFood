@@ -1,0 +1,57 @@
+@use '../base/variables';
+
+//box shadows cards
+@mixin box-shadow-card {
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.18);
+}
+
+//Box shadows menu cards
+@mixin box-shadow-card($x, $y, $blur, $spread, $color) {
+    box-shadow: $x $y $blur $spread $color;
+}
+
+
+//border radius pages restaurants
+@mixin border-radius-top-menu($radius) {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-radius-cards {
+    border-radius: 20px;
+}
+
+//Reactions
+
+@mixin liked-color {
+    background: variables.$liked-color;
+    -webkit-background-clip: text; /* Pour Safari */
+    background-clip: text;
+    color: transparent;
+}
+
+@mixin reaction-liked {
+    
+    .card__content--like input {
+        display: none;
+    }
+    .unfilled-heart {
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:not(:checked) ~ .reaction-favorite .unfilled-heart {
+        display: block;
+    }
+
+    input[type="checkbox"]:not(:checked) ~ .reaction-favorite .filled-heart {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .reaction-favorite .unfilled-heart {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .reaction-favorite .filled-heart {
+        display: block;
+    }
+}

@@ -3,10 +3,19 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 .main-container {
   box-sizing: border-box;
 }
 
+/*
+a {
+    text-decoration: none;
+}*/
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -43,40 +52,82 @@ p {
   font-size: 1.12em;
   background: linear-gradient(rgb(220, 109, 218), rgb(167, 92, 217));
   box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.3);
-  background-color: rgb(206, 52, 240);
-  background-image: linear-gradient(rgb(182, 111, 196), rgba(205, 205, 205, 0));
-  transition: background-color 0.4s;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease-in-out;
+  /* background-color: rgb(206, 52, 240);
+  background-image: linear-gradient( rgb(182, 111, 196), rgba(205, 205, 205, 0));
+  transition: background-color 0.3s;*/
 }
 
 .button:hover {
-  background-color: rgba(235, 91, 251, 0.769);
-}
-
-/*
-.button:hover {
-    background: variables.$button-color-hover;
-    //box-shadow: 0px 6px 15px -1px rgba(0,0,0,0.45);
+  box-shadow: 0px 6px 17px -1px rgba(0, 0, 0, 0.32);
+  transition: box-shadow 0.4s ease-in-out;
 }
 
 .button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: rgba(255, 255, 255, 0.025);
-    transition: opacity 0.3s;
-    border-radius: 50%;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.16);
+  transition: opacity 0.4s;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 .button:hover::before {
-    opacity: 1;
+  opacity: 1;
+}
 
-}*/
+/*------------------------------------------------*/
+.button__pages {
+  display: inline-block;
+  width: 230px;
+  margin: 19px auto;
+  padding: 18px 25px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.12em;
+  background: linear-gradient(rgb(220, 109, 218), rgb(167, 92, 217));
+  box-shadow: 0px 6px 10px -1px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.button__pages:hover {
+  box-shadow: 0px 6px 17px -1px rgba(0, 0, 0, 0.32);
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.button__pages::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.16);
+  transition: opacity 0.4s;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.button__pages:hover::before {
+  opacity: 1;
+}
+
 /*-------Nav-------*/
 .nav .nav__logo {
   /*necessaire de convretir ma balise <a> en bloc
@@ -230,6 +281,16 @@ suite le nome de la propiete de la variable*/
   border-radius: 20px;
   position: relative;
 }
+.restaurants .restaurants__cards--link .card .nouveau {
+  background-color: #99E2D0;
+  color: #008766;
+  position: absolute;
+  padding: 7px 15px;
+  font-weight: 500;
+  right: 15px;
+  top: 15px;
+  border-radius: 3px;
+}
 .restaurants .restaurants__cards--link img {
   object-fit: cover;
   width: 100%;
@@ -244,19 +305,37 @@ suite le nome de la propiete de la variable*/
   padding: 11px 15px;
   text-decoration: none;
 }
-.restaurants .restaurants__cards--link .like {
+.restaurants .restaurants__cards--link .card__content .card__content--like {
   font-size: 1.8em;
   padding: 0 15px 15px 0;
+  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text; /* Pour Safari */
+  background-clip: text;
+  color: transparent;
 }
-.restaurants .restaurants__cards--link .nouveau {
-  background-color: #99E2D0;
-  color: #008766;
-  position: absolute;
-  padding: 7px 15px;
-  font-weight: 500;
-  right: 15px;
-  top: 15px;
-  border-radius: 3px;
+.restaurants .restaurants__cards--link .card__content .card__content--like .card__content--like input {
+  display: none;
+}
+.restaurants .restaurants__cards--link .card__content .card__content--like .unfilled-heart {
+  cursor: pointer;
+}
+.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .unfilled-heart {
+  display: block;
+}
+.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .filled-heart {
+  display: none;
+}
+.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .unfilled-heart {
+  display: none;
+}
+.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .filled-heart {
+  display: block;
+}
+.restaurants .restaurants__cards--link .card__content .card__content--like .fa-regular {
+  color: black;
+}
+.restaurants .restaurants__cards--link .card__content .card__content--like input {
+  display: none;
 }
 
 .footer {
@@ -282,14 +361,19 @@ suite le nome de la propiete de la variable*/
 }
 .footer .footer__nav .footer__nav--list i {
   margin-right: 12px;
+  transition: color 0.3s ease-in-out;
 }
 .footer .footer__nav .footer__nav--list a {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 1.1em;
+  transition: color 0.3s ease-in-out;
 }
 .footer .footer__nav .footer__nav--list .fa-handshake-angle {
   font-size: 0.7em;
+}
+.footer .footer__nav .footer__nav--list a:hover, .footer .footer__nav .footer__nav--list i:hover {
+  color: #9356DC;
 }
 
 @media (min-width: 767.98px) {

@@ -1,0 +1,18 @@
+//styles
+@use './base/reset';
+@use './base/typography';
+@use './components/icons';
+@use './components/buttons';
+
+//header
+@use './pages/pages-header';
+
+//main
+@use './pages/pages-main';
+
+//footer
+@use './pages/pages-footer';
+
+//media querie
+@use '../scss/media_queries/media_querie_pages/tablete_pages';
+@use '../scss/media_queries/media_querie_pages/desktop_pages';

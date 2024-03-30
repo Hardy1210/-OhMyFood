@@ -24,14 +24,19 @@
         }
         .footer__nav--list i {
             margin-right: 12px;
+            transition: color 0.3s ease-in-out;
         }
         .footer__nav--list a {
             text-decoration: none;
             color: variables.$background-basic;
             font-size: 1.1em;
+            transition: color 0.3s ease-in-out;
         }
         .footer__nav--list .fa-handshake-angle {
             font-size: 0.7em;
         }
+        .footer__nav--list a:hover, .footer__nav--list i:hover  {
+            color: variables.$purple;
+        } 
     }
 }

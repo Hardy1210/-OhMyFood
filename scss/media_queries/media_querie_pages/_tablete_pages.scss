@@ -1,0 +1,20 @@
+@media (min-width: 767.98px) {
+    
+    .footer {
+        padding: 50px 70px 30px 30px;
+    .footer__nav {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+        .footer__nav--svg {
+            margin: 15px 0 0 100px;
+            width: 100px;
+        }
+        .footer__nav--list {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+    }
+}
+}

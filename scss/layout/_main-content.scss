@@ -1,5 +1,6 @@
 @use '../base/variables';
 @use '../base/typography';
+@use '../base/mixins';
 
 /*pour utilizer les couleurs d'une variable
 dans aun autre variable il faut lappeler avec
@@ -23,7 +24,7 @@ suite le nome de la propiete de la variable*/
     .restaurants__cards {
         display: grid;
         //grid direction colum en desktop
-        row-gap: 40px;
+        row-gap: 40px;        
     }
     
     .restaurants__cards--link {
@@ -40,6 +41,16 @@ suite le nome de la propiete de la variable*/
             border-radius: 20px;
             //pour letiquete .nouveau
             position: relative;
+            .nouveau {
+            background-color: variables.$check-box;
+            color: variables.$vert-fonce;
+            position: absolute;
+            padding: 7px 15px;
+            font-weight: 500;
+            right: 15px;
+            top: 15px;
+            border-radius: 3px;
+            }
         }
         img {
             object-fit: cover;
@@ -54,29 +65,25 @@ suite le nome de la propiete de la variable*/
             align-items: center;
             padding: 11px 15px;
             text-decoration: none;
-        }
 
-
-        .like {
+            //Reactions
+            .card__content--like {
+                font-size: 1.8em;
+                padding: 0 15px 15px 0;
+                
+                @include mixins.liked-color;
+                @include mixins.reaction-liked;
+                //je change a la couleur de base
+                .fa-regular {
+                    color: black;
+                }
+                
+            }
             
-            font-size: 1.8em;
-            padding: 0 15px 15px 0;
-            
-        }
+            .card__content--like input {
+                display: none;
+            }
 
-
-        //etiquette d'un nouveau restaurant
-        .nouveau {
-            background-color: variables.$vert-claire;
-            color: variables.$vert-fonce;
-            position: absolute;
-            padding: 7px 15px;
-            font-weight: 500;
-            right: 15px;
-            top: 15px;
-            border-radius: 3px;
         }
     }
 }
-
-
