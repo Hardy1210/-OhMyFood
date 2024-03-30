@@ -12,10 +12,11 @@ body {
   box-sizing: border-box;
 }
 
-/*
 a {
-    text-decoration: none;
-}*/
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -269,19 +270,12 @@ suite le nome de la propiete de la variable*/
   display: grid;
   row-gap: 40px;
 }
-.restaurants .restaurants__cards--link {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  text-decoration: none;
-  color: inherit;
-}
-.restaurants .restaurants__cards--link .card {
+.restaurants .restaurants__cards .card {
   background-color: #FFFFFF;
   border-radius: 20px;
   position: relative;
 }
-.restaurants .restaurants__cards--link .card .nouveau {
+.restaurants .restaurants__cards .card .nouveau {
   background-color: #99E2D0;
   color: #008766;
   position: absolute;
@@ -291,21 +285,21 @@ suite le nome de la propiete de la variable*/
   top: 15px;
   border-radius: 3px;
 }
-.restaurants .restaurants__cards--link img {
+.restaurants .restaurants__cards img {
   object-fit: cover;
   width: 100%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   height: 190px;
 }
-.restaurants .restaurants__cards--link .card__content {
+.restaurants .restaurants__cards .card__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 11px 15px;
   text-decoration: none;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like {
+.restaurants .restaurants__cards .card__content .card__content--like {
   font-size: 1.8em;
   padding: 0 15px 15px 0;
   background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
@@ -313,28 +307,28 @@ suite le nome de la propiete de la variable*/
   background-clip: text;
   color: transparent;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like .card__content--like input {
+.restaurants .restaurants__cards .card__content .card__content--like .card__content--like input {
   display: none;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like .unfilled-heart {
+.restaurants .restaurants__cards .card__content .card__content--like .unfilled-heart {
   cursor: pointer;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .unfilled-heart {
+.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .unfilled-heart {
   display: block;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .filled-heart {
+.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .filled-heart {
   display: none;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .unfilled-heart {
+.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .unfilled-heart {
   display: none;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .filled-heart {
+.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .filled-heart {
   display: block;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like .fa-regular {
+.restaurants .restaurants__cards .card__content .card__content--like .fa-regular {
   color: black;
 }
-.restaurants .restaurants__cards--link .card__content .card__content--like input {
+.restaurants .restaurants__cards .card__content .card__content--like input {
   display: none;
 }
 
@@ -415,11 +409,11 @@ suite le nome de la propiete de la variable*/
   .restaurants {
     padding: 20px 100px 30px 100px;
   }
-  .restaurants__cards {
+  .restaurants .restaurants__cards {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5vw;
   }
-  .restaurants__cards .restaurants__cards--link img {
+  .restaurants .restaurants__cards .card .img {
     width: 100%;
     height: 150px;
   }
@@ -461,6 +455,9 @@ suite le nome de la propiete de la variable*/
     padding: 20px 160px 30px 160px;
     max-width: 1440px;
     margin: 0 auto;
+  }
+  .restaurants .card img {
+    height: 180px;
   }
 }
 

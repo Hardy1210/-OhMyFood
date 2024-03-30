@@ -13,10 +13,9 @@ suite le nome de la propiete de la variable*/
 .restaurant__background {
     background-color: variables.$background-color;
 }
-.restaurants {
-    
-    padding: 45px 20px;
 
+.restaurants {
+    padding: 45px 20px;
     .restaurants__title {
         margin-bottom: 15px;
     }
@@ -24,18 +23,8 @@ suite le nome de la propiete de la variable*/
     .restaurants__cards {
         display: grid;
         //grid direction colum en desktop
-        row-gap: 40px;        
-    }
-    
-    .restaurants__cards--link {
-        display: block;
-        //code a verifier
-        //max-width: 400px;
-        margin: 0 auto;
-        width: 100%;
-        //toujour metre dans la balise d'origin
-        text-decoration: none;
-        color: inherit;
+        row-gap: 40px;  
+        
         .card {
             background-color: variables.$background-basic;
             border-radius: 20px;
@@ -70,20 +59,17 @@ suite le nome de la propiete de la variable*/
             .card__content--like {
                 font-size: 1.8em;
                 padding: 0 15px 15px 0;
-                
                 @include mixins.liked-color;
                 @include mixins.reaction-liked;
                 //je change a la couleur de base
                 .fa-regular {
                     color: black;
                 }
-                
             }
             
             .card__content--like input {
                 display: none;
             }
-
         }
-    }
+    }    
 }
