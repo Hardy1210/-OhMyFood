@@ -13,10 +13,11 @@ body {
   box-sizing: border-box;
 }
 
-/*
 a {
-    text-decoration: none;
-}*/
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -425,6 +426,7 @@ p {
 .menu__container .menu .nav__button {
   display: flex;
 }
+
 .footer {
   background-color: #353535;
   padding: 40px 30px;
@@ -463,8 +465,6 @@ p {
   color: #9356DC;
 }
 
-/*------*/
-/*-------------*/
 @media (min-width: 767.98px) {
   .footer {
     padding: 50px 70px 30px 30px;
