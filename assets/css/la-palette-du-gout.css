@@ -165,7 +165,7 @@ p {
   margin-bottom: -57px;
 }
 .menu__container .menu__image-2 {
-  background-image: url(/assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-image: url(../../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
   width: 100%;
   height: 300px;
   background-size: cover;
@@ -346,12 +346,12 @@ p {
 
   //---------------------------------*/
 }
-.menu__container .menu section .subtitle__card {
+.menu__container .menu section .subtitle .subtitle__card {
   font-size: 1.1em;
   font-weight: 400;
-  margin-bottom: 5px;
+  margin-bottom: -7px;
 }
-.menu__container .menu section img {
+.menu__container .menu section .subtitle img {
   width: 45px;
 }
 .menu__container .menu section article {
