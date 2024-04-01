@@ -45,10 +45,12 @@
 
     input[type="checkbox"]:not(:checked) ~ .reaction-favorite .filled-heart {
         display: none;
+        
     }
 
     input[type="checkbox"]:checked ~ .reaction-favorite .unfilled-heart {
         display: none;
+        
     }
 
     input[type="checkbox"]:checked ~ .reaction-favorite .filled-heart {
