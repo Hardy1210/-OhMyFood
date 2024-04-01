@@ -4,14 +4,12 @@
 @use './components/icons';
 @use './components/buttons';
 
-//header
-@use './pages/pages-header';
+
 
 //main
-//@use './pages/pages-main';
+@use './pages/pages';
 
-//footer
-//@use './pages/pages-footer';
+
 
 //media querie
 @use '../scss/media_queries/media_querie_pages/tablete_pages';
