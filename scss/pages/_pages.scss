@@ -74,7 +74,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 45px;
+            gap: 35px;
             
             .section__title {
                 font-family: "Shrikhand", serif;
@@ -94,10 +94,8 @@
                 //je change a la couleur de base
                 .fa-regular {
                     color: black;
-                    
                 }
             }
-
         }
 
         /*-------Entrées------*/
@@ -113,16 +111,14 @@
                     font-size: 1.1em;
                     font-weight: 400;
                     margin-bottom: -7px;
-                    
                 }
                 img {
                     width: 45px;
-                    
                 }
             }
-            
 
             //Code demandé
+            //cards
             article {
                 @include mixins.border-radius-cards;
                 @include mixins.box-shadow-card(0px, 5px, 15px, 0px, rgba(0,0,0,0.10));
@@ -140,9 +136,8 @@
                         margin: 13px 0 13px 15px;
                         display: flex;
                         flex-direction: column;
-                        /*cache la .card__text-2*/
-                        overflow: hidden;   
                         /*important pour le fonctionemen du deplacement*/
+                        overflow: hidden;   
                         width: calc(100% - 54px);
                         h4 {
                             font-size: 1.26em;
@@ -186,11 +181,13 @@
                         margin-right: -5.2rem;
                         transition: all 250ms ease-in-out;
                         .fa-check {
-                            border-radius: 100%;
+                            
                             background-color: variables.$background-basic;
                             color: variables.$check-box;
+                            border-radius: 50px;
                             padding: 4px;
-                            
+                            width: 24px;
+                            text-align: center;
                         }
                     }
                 }
@@ -295,7 +292,6 @@
                     }
                 }
             }
-
             //---------------------------------*/
         }
         .nav__button {
@@ -304,7 +300,6 @@
             
         }
     }
-
 }
 
 //Footer

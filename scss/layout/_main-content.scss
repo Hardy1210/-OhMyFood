@@ -7,9 +7,6 @@ dans aun autre variable il faut lappeler avec
 son nom de de fichier suivi d'un point et en 
 suite le nome de la propiete de la variable*/
 
-/*body {
-    background-color: variables.$color-body;
-}*/
 .restaurant__background {
     background-color: variables.$background-color;
 }
@@ -56,10 +53,11 @@ suite le nome de la propiete de la variable*/
             text-decoration: none;
 
             //Reactions
-            .card__content--like {
+            &--like {
                 font-size: 1.8em;
                 padding: 0 15px 15px 0;
                 @include mixins.liked-color;
+                //:checked
                 @include mixins.reaction-liked;
                 //je change a la couleur de base
                 .fa-regular {

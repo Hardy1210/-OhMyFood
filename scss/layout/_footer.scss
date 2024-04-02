@@ -7,13 +7,13 @@
     .footer__nav {
         display: flex;
         flex-direction: column;
-        .footer__nav--svg {
+        &--svg {
             width: 120px;
             height: auto;
             margin-bottom: 17px;
             //la couleur on le change directemen ou se trouve le fichier
         }
-        .footer__nav--list {
+        &--list {
             display: flex;
             flex-direction: column;
             list-style: none;

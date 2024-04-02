@@ -7,19 +7,13 @@
         padding: 50px 160px;
         .fonctionnement__tittle {
             text-align: inherit;
-            
         }
         .fonctionnement__list {
-            //display: flex;
-            //flex-wrap: wrap;
-            //flex-direction: row;
-            //justify-content: center;
             justify-content: space-between;
             grid-template-columns: repeat(3,1fr);
             //gap: 40px;
         }
     } 
-    
     .restaurants {
         padding: 20px 160px 30px 160px;
         max-width: 1440px;

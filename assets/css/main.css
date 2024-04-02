@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   box-sizing: border-box;
@@ -151,24 +152,28 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-  gap: 20px;
+  padding: 15px 0;
   color: #353535;
   /*por le box shadow besoin de metre un position relative 
-  et un z-index pour bien plase le blos et que l'onbre puise aparetre*/
+  et un z-index pour bien placé le blocs et que l'onbre puise aparetre*/
   box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
-  /*&*/
 }
 .nav__address .nav__icon {
   font-size: 1.2em;
+  margin-right: 10px;
 }
-.nav__address address {
-  all: initial;
+.nav__address input {
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 1.11em;
+  border: none;
+  background: #EAEAEA;
+  width: 150px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.nav__address input[type=text]:focus {
+  outline: none;
 }
 
 /*-------Button reservez-------*/
@@ -179,8 +184,6 @@ p {
 }
 
 /*-------section fonctionnement--------*/
-/*.fonctionnement__background {
-}*/
 .fonctionnement {
   padding: 40px 25px 60px 25px;
   display: flex;
@@ -253,9 +256,6 @@ p {
 dans aun autre variable il faut lappeler avec
 son nom de de fichier suivi d'un point et en 
 suite le nome de la propiete de la variable*/
-/*body {
-    background-color: variables.$color-body;
-}*/
 .restaurant__background {
   background-color: #F3F3F3;
 }
@@ -299,7 +299,7 @@ suite le nome de la propiete de la variable*/
   padding: 11px 15px;
   text-decoration: none;
 }
-.restaurants .restaurants__cards .card__content .card__content--like {
+.restaurants .restaurants__cards .card__content--like {
   font-size: 1.8em;
   padding: 0 15px 15px 0;
   background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
@@ -307,25 +307,25 @@ suite le nome de la propiete de la variable*/
   background-clip: text;
   color: transparent;
 }
-.restaurants .restaurants__cards .card__content .card__content--like .card__content--like input {
+.restaurants .restaurants__cards .card__content--like .card__content--like input {
   display: none;
 }
-.restaurants .restaurants__cards .card__content .card__content--like .unfilled-heart {
+.restaurants .restaurants__cards .card__content--like .unfilled-heart {
   cursor: pointer;
 }
-.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .unfilled-heart {
+.restaurants .restaurants__cards .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .unfilled-heart {
   display: block;
 }
-.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .filled-heart {
+.restaurants .restaurants__cards .card__content--like input[type=checkbox]:not(:checked) ~ .reaction-favorite .filled-heart {
   display: none;
 }
-.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .unfilled-heart {
+.restaurants .restaurants__cards .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .unfilled-heart {
   display: none;
 }
-.restaurants .restaurants__cards .card__content .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .filled-heart {
+.restaurants .restaurants__cards .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .filled-heart {
   display: block;
 }
-.restaurants .restaurants__cards .card__content .card__content--like .fa-regular {
+.restaurants .restaurants__cards .card__content--like .fa-regular {
   color: black;
 }
 .restaurants .restaurants__cards .card__content .card__content--like input {
@@ -340,12 +340,12 @@ suite le nome de la propiete de la variable*/
   display: flex;
   flex-direction: column;
 }
-.footer .footer__nav .footer__nav--svg {
+.footer .footer__nav--svg {
   width: 120px;
   height: auto;
   margin-bottom: 17px;
 }
-.footer .footer__nav .footer__nav--list {
+.footer .footer__nav--list {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -419,7 +419,7 @@ suite le nome de la propiete de la variable*/
   }
   /*--------Footer---------*/
   .footer {
-    padding: 50px 70px 30px 30px;
+    padding: 50px 70px 30px 70px;
   }
   .footer .footer__nav {
     display: flex;

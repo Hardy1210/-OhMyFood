@@ -12,7 +12,6 @@
         z-index: 2;
     }
     img {
-        
         width: 200px;
         height: auto;
         display: block;
@@ -26,22 +25,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
-    gap: 20px;
+    padding: 15px 0;
+    //gap: 20px;
     color: variables.$typography-secondary-color;
     /*por le box shadow besoin de metre un position relative 
-    et un z-index pour bien plase le blos et que l'onbre puise aparetre*/
+    et un z-index pour bien placé le blocs et que l'onbre puise aparetre*/
     box-shadow: 0px 3px 6px 2px rgba(0,0,0,0.30);
     position: relative;
     z-index: 1;
-    /*&*/.nav__icon {
+    .nav__icon {
         font-size: 1.2em;
+        margin-right: 10px;
     }
-    address {
-        all: initial;
+    input {
         font-family: typography.$font-project;
-        font-weight: 500;
-        font-size: 1.11em;
+        border: none;
+        background: variables.$background-color-variant;
+        width: 150px;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    input[type="text"]:focus {
+        outline: none;
     }
 }
 
@@ -53,17 +58,12 @@
 }
 
 /*-------section fonctionnement--------*/
-//si c'ets necessaire
-/*.fonctionnement__background {
-}*/
 .fonctionnement {
     padding: 40px 25px 60px 25px;
     display: flex;
     flex-direction: column;
-    //border-radius: 30px;
     box-sizing: border-box;
     .fonctionnement__tittle {
-        //text-align: center;
         padding-right: 100px;
         
     }
@@ -81,29 +81,29 @@
             display: block;
             margin: 0 auto;
             max-width: 380px;
-            //min-width: 210px;
+            &--cont {  
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: variables.$background-color;
+                padding: 27px 30px;
+                border-radius: 25px 25px;
+                margin-left: 15px;
+                //attention 
+                //width: 100%;
+                height: auto;
+                font-weight: 500;
+                color: black;
+                box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.18);
+            }
+            &--cont p {
+                font-weight: 500;
+                padding: 0;
+                font-size: 1.2em;
+            }
         }
-        .fonctionnement__choice--cont {  
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            background-color: variables.$background-color;
-            padding: 27px 30px;
-            border-radius: 25px 25px;
-            margin-left: 15px;
-            //attention 
-            //width: 100%;
-            height: auto;
-            font-weight: 500;
-            color: black;
-            box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.18);
-        }
-        .fonctionnement__choice--cont p {
-            font-weight: 500;
-            padding: 0;
-            font-size: 1.2em;
-        }
+        
         .fonctionnement__choice i {
             color: variables.$icon-color;
             margin-right: 25px;

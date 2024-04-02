@@ -22,8 +22,10 @@
                         <img src="assets/images/logo/ohmyfood.png" alt="Logo OhMyFood">
                     </div>
                     <div class="nav__address">
-                        <i class="nav__icon fa-solid fa-location-dot"></i>
-                        <address>Paris, Belleville</address>
+                        <form id="searchForm" action="/recherche.php" method="get">
+                            <i class="nav__icon fa-solid fa-location-dot"></i>
+                            <input type="text" id="ville" name="ville" placeholder="Paris, Belleville">
+                        </form>
                     </div>
                     <!--Button reservez-->
                     <div class="nav__reservez">

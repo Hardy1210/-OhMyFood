@@ -196,7 +196,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 45px;
+  gap: 35px;
 }
 .menu__container .menu__title .section__title {
   font-family: "Shrikhand", serif;
@@ -331,7 +331,6 @@ p {
           }
       }
   }
-
   //---------------------------------*/
 }
 .menu__container .menu section .subtitle .subtitle__card {
@@ -359,9 +358,8 @@ p {
   margin: 13px 0 13px 15px;
   display: flex;
   flex-direction: column;
-  /*cache la .card__text-2*/
-  overflow: hidden;
   /*important pour le fonctionemen du deplacement*/
+  overflow: hidden;
   width: calc(100% - 54px);
 }
 .menu__container .menu section article .card .card__text h4 {
@@ -400,10 +398,12 @@ p {
   transition: all 250ms ease-in-out;
 }
 .menu__container .menu section article .card .icon--box .fa-check {
-  border-radius: 100%;
   background-color: #FFFFFF;
   color: #99E2D0;
+  border-radius: 50px;
   padding: 4px;
+  width: 24px;
+  text-align: center;
 }
 .menu__container .menu section article .card:hover .icon--box {
   margin: 0;
