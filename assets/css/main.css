@@ -252,6 +252,24 @@ p {
   left: -17px;
 }
 
+.nouveau {
+  animation: shakeAnimation 0.4s ease-in-out infinite, pause 5s steps(3, end) infinite;
+}
+
+@keyframes pause {
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
 /*pour utilizer les couleurs d'une variable
 dans aun autre variable il faut lappeler avec
 son nom de de fichier suivi d'un point et en 
@@ -284,6 +302,23 @@ suite le nome de la propiete de la variable*/
   right: 15px;
   top: 15px;
   border-radius: 3px;
+}
+@keyframes shakeAnimation {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-4px, 0px) rotate(-4deg);
+  }
+  50% {
+    transform: translate(4px, 0px) rotate(4deg);
+  }
+  75% {
+    transform: translate(-4px, 0px) rotate(-4deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
 }
 .restaurants .restaurants__cards img {
   object-fit: cover;
@@ -324,9 +359,27 @@ suite le nome de la propiete de la variable*/
 }
 .restaurants .restaurants__cards .card__content--like input[type=checkbox]:checked ~ .reaction-favorite .filled-heart {
   display: block;
+  animation: scaleAnimation 200ms ease-in-out forwards;
+}
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .restaurants .restaurants__cards .card__content--like .fa-regular {
   color: black;
+}
+.restaurants .restaurants__cards .card__content--like .fa-solid {
+  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text; /* Pour Safari */
+  background-clip: text;
+  color: transparent;
 }
 .restaurants .restaurants__cards .card__content .card__content--like input {
   display: none;

@@ -36,6 +36,8 @@ suite le nome de la propiete de la variable*/
             right: 15px;
             top: 15px;
             border-radius: 3px;
+            //animation shaker
+            @include mixins.shaker
             }
         }
         img {
@@ -62,6 +64,9 @@ suite le nome de la propiete de la variable*/
                 //je change a la couleur de base
                 .fa-regular {
                     color: black;
+                }
+                .fa-solid {
+                    @include mixins.liked-color;
                 }
             }
             

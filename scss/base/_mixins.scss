@@ -21,7 +21,7 @@
     border-radius: 20px;
 }
 
-//Reactions
+//Animation Reactions
 
 @mixin liked-color {
     background: variables.$liked-color;
@@ -62,4 +62,35 @@
         50% { transform: scale(1.5); }
         100% { transform: scale(1); }
     }
+}
+
+//Animation nouveautes 
+
+@mixin shaker {
+    @keyframes shakeAnimation {
+        0% { transform: translate(0px, 0px) rotate(0deg); }
+        25% { transform: translate(-4px, 0px) rotate(-4deg); }
+        50% { transform: translate(4px, 0px) rotate(4deg); }
+        75% { transform: translate(-4px, 0px) rotate(-4deg); }
+        100% { transform: translate(0px, 0px) rotate(0deg); }
+    }
+    }
+    .nouveau {
+        animation: 
+        shakeAnimation 0.4s ease-in-out infinite, /* Animation principale */
+        pause 5s steps(3, end) infinite;
+    }
+    @keyframes pause {
+        100% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        }
+        50% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        }
+        25% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        }
+        10% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        }
 }
