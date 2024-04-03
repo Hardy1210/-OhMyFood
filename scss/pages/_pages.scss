@@ -85,22 +85,28 @@
             .menu__like {
                 font-size: 1.8em;
                 margin-right: 23px;
-                @include mixins.liked-color;
+                //@include mixins.liked-color;
                 @include mixins.reaction-liked;
                 
                 input {
                 display: none;
                 }
+                
                 //je change a la couleur de base
                 .fa-regular {
                     color: black;
+                }
+                
+                //couleur pour le coeur cochée
+                .fa-solid {
+                    @include mixins.liked-color;
                 }
             }
         }
 
         /*-------Entrées------*/
         /*-------Appeteizers------*/
-    
+        
         section {
             //centrer les elements cards
             //pour version desktop fonctione aussi

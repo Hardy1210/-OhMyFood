@@ -206,10 +206,6 @@ p {
 .menu__container .menu__title .menu__like {
   font-size: 1.8em;
   margin-right: 23px;
-  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
-  -webkit-background-clip: text; /* Pour Safari */
-  background-clip: text;
-  color: transparent;
 }
 .menu__container .menu__title .menu__like .card__content--like input {
   display: none;
@@ -228,12 +224,30 @@ p {
 }
 .menu__container .menu__title .menu__like input[type=checkbox]:checked ~ .reaction-favorite .filled-heart {
   display: block;
+  animation: scaleAnimation 200ms ease-in-out forwards;
+}
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .menu__container .menu__title .menu__like input {
   display: none;
 }
 .menu__container .menu__title .menu__like .fa-regular {
   color: black;
+}
+.menu__container .menu__title .menu__like .fa-solid {
+  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text; /* Pour Safari */
+  background-clip: text;
+  color: transparent;
 }
 .menu__container .menu section {
   max-width: 700px;

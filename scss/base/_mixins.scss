@@ -34,6 +34,7 @@
     
     .card__content--like input {
         display: none;
+        
     }
     .unfilled-heart {
         cursor: pointer;
@@ -45,15 +46,20 @@
 
     input[type="checkbox"]:not(:checked) ~ .reaction-favorite .filled-heart {
         display: none;
-        
     }
 
     input[type="checkbox"]:checked ~ .reaction-favorite .unfilled-heart {
         display: none;
-        
     }
 
+    //animation juste pour le coeur cochée
     input[type="checkbox"]:checked ~ .reaction-favorite .filled-heart {
         display: block;
+        animation: scaleAnimation 200ms ease-in-out forwards;
+    }
+    @keyframes scaleAnimation {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.5); }
+        100% { transform: scale(1); }
     }
 }
