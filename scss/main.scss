@@ -4,6 +4,9 @@
 @use './components/icons';
 @use './components/buttons';
 
+// Animations
+@use './components/animations';
+
 //main
 @use './layout/header';
 @use "./layout/main-content";

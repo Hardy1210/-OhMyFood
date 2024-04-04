@@ -2,6 +2,10 @@
 @use '../base/typography';
 
 /*-------Nav-------*/
+//width de 100% pour main-container pour bien elargir et pour le centrage de de .loader a cause de display flex
+.main-container {
+    width: 100%;
+
 .nav {
     .nav__logo {
         /*necessaire de convretir ma balise <a> en bloc
@@ -60,7 +64,7 @@
 /*-------section fonctionnement--------*/
 .fonctionnement {
     padding: 40px 25px 60px 25px;
-    display: flex;
+   // display: flex;
     flex-direction: column;
     box-sizing: border-box;
     .fonctionnement__tittle {
@@ -133,4 +137,5 @@
             left: -17px;
         }
     }
+}
 }

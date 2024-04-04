@@ -130,9 +130,154 @@ p {
   opacity: 1;
 }
 
+.loader-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+.loader-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  z-index: 3;
+  animation: revealPage 1.5s 0.5s ease-in-out forwards;
+  pointer-events: none;
+}
+@keyframes revealPage {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loader-container .loader {
+  position: fixed;
+  top: 35vh;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: spin 4s linear infinite, fadeInOut 2.5s ease-out 1 forwards;
+  z-index: 4;
+  clip-path: circle(50% at center);
+}
+.loader-container .loader .image-1 {
+  position: absolute;
+  background-image: url(../../assets/images/loader/image1.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: fadeOut 0s forwards 1s;
+}
+.loader-container .loader .image-2 {
+  position: absolute;
+  background-image: url(../../assets/images/loader/image2.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: fadeOut 0s forwards 1.9s;
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}
+
+.menu {
+  position: relative;
+}
+.menu .section-1 {
+  opacity: 0;
+  animation: fadeIn 1s forwards, slideIn 1s forwards;
+  animation-delay: 0.3s;
+}
+.menu .section-2 {
+  opacity: 0;
+  animation: slideOut 1s forwards;
+  animation-delay: 0.6s;
+}
+.menu .section-3 {
+  opacity: 0;
+  animation: fadeIn 1s forwards, slideIn 1s forwards;
+  animation-delay: 0.9s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Faire apparaître le bloc en ajustant l'opacité à 1 */
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0; /* Commencer avec une opacité de 0 */
+    transform: translateX(-100%); /* Déplacer le bloc de 100% de sa propre largeur vers la gauche */
+  }
+  to {
+    opacity: 1; /* Faire apparaître le bloc en ajustant l'opacité à 1 */
+    transform: translateX(0); /* Retourner à la position initiale (0% de déplacement) */
+  }
+}
+@keyframes slideOut {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.nouveau {
+  animation: shakeAnimation 0.4s ease-in-out infinite, pause 5s steps(3, end) infinite;
+}
+
+@keyframes pause {
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  10% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
 .main-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 /*------Nav-------*/
@@ -180,6 +325,7 @@ p {
   background-image: url(../../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpeg);
 }
 .menu__container .menu {
+  position: relative;
   box-sizing: border-box;
   padding: 25px 18px;
   background-color: #F3F3F3;

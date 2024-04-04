@@ -1,0 +1,166 @@
+@use '../base/variables';
+
+//on ajoute de parametres a body pour les animation
+.loader-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+    //animation revealpage
+    background-color: variables.$background-basic;
+    //opacity: 0; // Opacité initiale 
+    //animation: revealPage 1s 0.5s ease-in-out forwards;
+    
+    // pour body
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: inherit;
+        //opacity: 1;
+        //attention car t' la partie header avec z-index de1 a 2
+        z-index: 3;
+        animation: revealPage 1.5s 0.5s ease-in-out forwards;
+        pointer-events: none;
+    }
+    
+    //animation pour body
+    @keyframes revealPage {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    //animation pour  loader
+    .loader {
+        position: fixed;
+        top: 35vh;
+        //left:50%; 
+        //-webkit-transform:translate3d(-50%,0,0);
+        width: 200px;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        //parametres de l'animation
+        
+        animation: spin 4s linear infinite, fadeInOut 2.5s ease-out 1 forwards; 
+        //attention car t' la partie header avec z-index de1 a 2
+        z-index: 4;
+        //pointer-events: none;
+        //enleve le bords
+        clip-path: circle(50% at center);
+        
+        
+        
+        .image-1 {
+            position: absolute;
+            background-image: url(../../assets/images/loader/image1.png);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            //animation
+            animation: fadeOut 0s forwards 1s;
+            
+        }
+
+        .image-2 {
+            position: absolute;
+            background-image: url(../../assets/images/loader/image2.png);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            //animation
+            animation: fadeOut 0s forwards 1.9s; 
+        }
+
+        //animation pour chaque image
+            
+            @keyframes fadeOut {
+                to {
+                    opacity: 0;
+                }
+            }
+    }
+
+    //Animation pour loader
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes fadeInOut {
+        //inverse l'opacity pour que lanimation soi inmediate
+        0%, 100% {
+            opacity: 0;
+        }
+        25%, 75% {
+            opacity: 1;
+        }
+    }
+}
+
+//Animation pour pages
+.menu {
+    position: relative;
+
+    .section-1 {
+        opacity: 0;
+        animation: fadeIn 1s forwards, slideIn 1s forwards;
+        animation-delay: 0.3s;
+    }
+    .section-2 {
+        
+        opacity: 0;
+        animation: slideOut 1s forwards;
+        animation-delay: 0.6s;
+    }
+    .section-3 {
+        opacity: 0;
+        animation: fadeIn 1s forwards, slideIn 1s forwards;
+        animation-delay: 0.9s;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1; /* Faire apparaître le bloc en ajustant l'opacité à 1 */
+        }
+    }
+    
+    @keyframes slideIn {
+        from {
+            opacity: 0; /* Commencer avec une opacité de 0 */
+            transform: translateX(-100%); /* Déplacer le bloc de 100% de sa propre largeur vers la gauche */
+        }
+        to {
+            opacity: 1; /* Faire apparaître le bloc en ajustant l'opacité à 1 */
+            transform: translateX(0); /* Retourner à la position initiale (0% de déplacement) */
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            opacity: 0; 
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1; 
+            transform: translateX(0%); 
+        }
+    }
+}

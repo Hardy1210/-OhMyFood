@@ -130,24 +130,154 @@ p {
   opacity: 1;
 }
 
+.loader-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+.loader-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  z-index: 3;
+  animation: revealPage 1.5s 0.5s ease-in-out forwards;
+  pointer-events: none;
+}
+@keyframes revealPage {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loader-container .loader {
+  position: fixed;
+  top: 35vh;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: spin 4s linear infinite, fadeInOut 2.5s ease-out 1 forwards;
+  z-index: 4;
+  clip-path: circle(50% at center);
+}
+.loader-container .loader .image-1 {
+  position: absolute;
+  background-image: url(../../assets/images/loader/image1.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: fadeOut 0s forwards 1s;
+}
+.loader-container .loader .image-2 {
+  position: absolute;
+  background-image: url(../../assets/images/loader/image2.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: fadeOut 0s forwards 1.9s;
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}
+
+.menu {
+  position: relative;
+}
+.menu .section-1 {
+  opacity: 0;
+  animation: fadeIn 1s forwards, slideIn 1s forwards;
+  animation-delay: 0.3s;
+}
+.menu .section-2 {
+  opacity: 0;
+  animation: slideOut 1s forwards;
+  animation-delay: 0.6s;
+}
+.menu .section-3 {
+  opacity: 0;
+  animation: fadeIn 1s forwards, slideIn 1s forwards;
+  animation-delay: 0.9s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Faire apparaître le bloc en ajustant l'opacité à 1 */
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity: 0; /* Commencer avec une opacité de 0 */
+    transform: translateX(-100%); /* Déplacer le bloc de 100% de sa propre largeur vers la gauche */
+  }
+  to {
+    opacity: 1; /* Faire apparaître le bloc en ajustant l'opacité à 1 */
+    transform: translateX(0); /* Retourner à la position initiale (0% de déplacement) */
+  }
+}
+@keyframes slideOut {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
 /*-------Nav-------*/
-.nav .nav__logo {
+.main-container {
+  width: 100%;
+  /*------Nav address------*/
+  /*-------Button reservez-------*/
+  /*-------section fonctionnement--------*/
+}
+.main-container .nav .nav__logo {
   /*necessaire de convretir ma balise <a> en bloc
   pour lui posicionner avec l'ombre box shadow */
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 2;
 }
-.nav img {
+.main-container .nav img {
   width: 200px;
   height: auto;
   display: block;
   margin: auto;
   padding: 30px 0 20px 0;
 }
-
-/*------Nav address------*/
-.nav__address {
+.main-container .nav__address {
   background-color: #EAEAEA;
   display: flex;
   justify-content: center;
@@ -160,11 +290,11 @@ p {
   position: relative;
   z-index: 1;
 }
-.nav__address .nav__icon {
+.main-container .nav__address .nav__icon {
   font-size: 1.2em;
   margin-right: 10px;
 }
-.nav__address input {
+.main-container .nav__address input {
   font-family: "Roboto", sans-serif;
   border: none;
   background: #EAEAEA;
@@ -172,28 +302,23 @@ p {
   font-size: 1.2em;
   font-weight: bold;
 }
-.nav__address input[type=text]:focus {
+.main-container .nav__address input[type=text]:focus {
   outline: none;
 }
-
-/*-------Button reservez-------*/
-.nav__reservez {
+.main-container .nav__reservez {
   background-color: #F3F3F3;
   text-align: center;
   padding: 35px 20px 40px 20px;
 }
-
-/*-------section fonctionnement--------*/
-.fonctionnement {
+.main-container .fonctionnement {
   padding: 40px 25px 60px 25px;
-  display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
-.fonctionnement .fonctionnement__tittle {
+.main-container .fonctionnement .fonctionnement__tittle {
   padding-right: 100px;
 }
-.fonctionnement .fonctionnement__list {
+.main-container .fonctionnement .fonctionnement__list {
   list-style: none;
   counter-reset: custom-counter;
   display: grid;
@@ -201,13 +326,13 @@ p {
   gap: 25px;
   padding: 25px 0 0 0;
 }
-.fonctionnement .fonctionnement__list .fonctionnement__choice {
+.main-container .fonctionnement .fonctionnement__list .fonctionnement__choice {
   text-decoration: none;
   display: block;
   margin: 0 auto;
   max-width: 380px;
 }
-.fonctionnement .fonctionnement__list .fonctionnement__choice--cont {
+.main-container .fonctionnement .fonctionnement__list .fonctionnement__choice--cont {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -221,21 +346,21 @@ p {
   color: black;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.18);
 }
-.fonctionnement .fonctionnement__list .fonctionnement__choice--cont p {
+.main-container .fonctionnement .fonctionnement__list .fonctionnement__choice--cont p {
   font-weight: 500;
   padding: 0;
   font-size: 1.2em;
 }
-.fonctionnement .fonctionnement__list .fonctionnement__choice i {
+.main-container .fonctionnement .fonctionnement__list .fonctionnement__choice i {
   color: #7E7E7E;
   margin-right: 25px;
   margin-left: 9px;
   font-size: 1.3em;
 }
-.fonctionnement .fonctionnement__list .fonctionnement__choice:hover i {
+.main-container .fonctionnement .fonctionnement__list .fonctionnement__choice:hover i {
   color: #9356DC;
 }
-.fonctionnement .fonctionnement__list .fonctionnement__choice--cont::before {
+.main-container .fonctionnement .fonctionnement__list .fonctionnement__choice--cont::before {
   /*on appelle notre custom-counter
   et on lui atribu lordre de notre liste numerote*/
   content: counter(custom-counter);
@@ -491,6 +616,7 @@ suite le nome de la propiete de la variable*/
 }
 @media (min-width: 1024px) {
   .fonctionnement__background {
+    padding: 0 80px;
     max-width: 1440px;
     margin: 0 auto;
   }
@@ -505,7 +631,7 @@ suite le nome de la propiete de la variable*/
     grid-template-columns: repeat(3, 1fr);
   }
   .restaurants {
-    padding: 20px 160px 30px 160px;
+    padding: 20px 100px 30px 100px;
     max-width: 1440px;
     margin: 0 auto;
   }
