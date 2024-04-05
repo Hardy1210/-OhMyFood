@@ -169,6 +169,7 @@ p {
   animation: spin 4s linear infinite, fadeInOut 2.5s ease-out 1 forwards;
   z-index: 4;
   clip-path: circle(50% at center);
+  pointer-events: none;
 }
 .loader-container .loader .image-1 {
   position: absolute;
