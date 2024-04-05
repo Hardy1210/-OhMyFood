@@ -20,7 +20,7 @@ suite le nome de la propiete de la variable*/
     .restaurants__cards {
         display: grid;
         //grid direction colum en desktop
-        row-gap: 40px;  
+        row-gap: 25px;  
         
         .card {
             background-color: variables.$background-basic;
